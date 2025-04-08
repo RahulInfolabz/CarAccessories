@@ -9,7 +9,7 @@ async function FetchCarsByBrands(req, res) {
     const { brandId } = req.params;
 
     const data = await collection
-      .find({ "brandId._id": ObjectId.createFromHexString(brandId) })
+      .find({ "brandId": ObjectId.createFromHexString(brandId) })
       .toArray();
 
     if (data.length == 0) {
