@@ -5,7 +5,7 @@ async function AddContactUs(req, res) {
     const db = await ConnectMongoDB();
     const collection = db.collection("ContactUs");
 
-    const { name, email, phone, message } = req.body;
+    const { name, email, subject, phone, message } = req.body;
 
     await collection.insertOne({
       name,
