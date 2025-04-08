@@ -17,10 +17,12 @@ async function AddContactUs(req, res) {
       timestamp: new Date(),
     });
 
-    return res.status(200).json({ message: "Contact Inquiry Added" });
+    return res
+      .status(200)
+      .json({ success: true, message: "Contact Inquiry Submitted" });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json({ success: false, message: error.message });
   }
 }
 
