@@ -9,7 +9,7 @@ async function FetchAccessoriesByCars(req, res) {
     const { carId } = req.params;
 
     const data = await collection
-      .find({ "carId._id": ObjectId.createFromHexString(carId) })
+      .find({ "carId": ObjectId.createFromHexString(carId) })
       .toArray();
 
     if (data.length == 0) {
