@@ -18,7 +18,7 @@ async function FetchAccessoriesByCars(req, res) {
       return res.status(200).json({
         message: "Data Fetched",
         total: data.length,
-        Acessories: data,
+        Accessories: data,
       });
     }
   } catch (error) {
