@@ -4,12 +4,12 @@ const ConnectMongoDB = require("../DB/db_connect");
 async function FetchAccessoriesByCars(req, res) {
   try {
     const db = await ConnectMongoDB();
-    const collection = db.collection("Packages");
+    const collection = db.collection("Accessories");
 
     const { carId } = req.params;
 
     const data = await collection
-      .find({ "carId": ObjectId.createFromHexString(carId) })
+      .find({ carId: ObjectId.createFromHexString(carId) })
       .toArray();
 
     if (data.length == 0) {
